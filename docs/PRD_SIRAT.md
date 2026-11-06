@@ -87,7 +87,7 @@ Aplikasi diorganisir menggunakan arsitektur **Multi-Repo dengan Shared Database*
 | Komponen | Teknologi | Repository | Keterangan |
 |---|---|---|---|
 | **Backend & Admin** | Laravel 12 + Filament v5 | [`rt02-sirat-backend`](https://github.com/Ikhsyann/rt02-sirat-backend) | Admin Panel pengurus RT, single source of truth skema & migrasi DB |
-| **Frontend & Publik** | Laravel 12 + Blade + Breeze | [`rt02-sirat-frontend`](https://github.com/Ikhsyann/rt02-sirat-frontend) | Portal Warga, Beranda publik, dokumentasi kegiatan, detail artikel |
+| **Frontend & Publik** | Laravel 13 + Blade + Breeze | [`rt02-sirat-frontend`](https://github.com/Ikhsyann/rt02-sirat-frontend) | Portal Warga, Beranda publik, dokumentasi kegiatan, detail artikel |
 | **Admin Panel** | Filament v5 | Di Backend (`/admin`) | CRUD otomatis untuk pengurus RT |
 | **Auth Warga** | Laravel Breeze | Di Frontend (`/login`) | Login warga terhubung 1-to-1 ke data Anggota Keluarga |
 | **Database** | MySQL 8.0 (`rt02-db`) | Bersama (Shared) | Kedua repo membaca & menulis ke basis data yang sama |
@@ -269,7 +269,7 @@ SIRAT menggunakan arsitektur **Multi-Repo dengan Shared Database** (mengadopsi p
         │  Repo 1: BACKEND        │           │  Repo 2: FRONTEND       │
         │  (rt02-sirat-backend)   │           │  (rt02-sirat-frontend)  │
         ├─────────────────────────┤           ├─────────────────────────┤
-        │ • Laravel 12 + Filament │           │ • Laravel 12 + Blade    │
+        │ • Laravel 12 + Filament │           │ • Laravel 13 + Blade    │
         │ • Admin Panel (/admin)  │           │ • Auth Warga (Breeze)   │
         │ • Pemilik Migrasi & DB  │           │ • Beranda Publik (/)    │
         │ • Port: 8000            │           │ • Port: 8001            │

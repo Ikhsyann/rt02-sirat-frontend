@@ -50,6 +50,16 @@ class LoginRequest extends FormRequest
             ]);
         }
 
+        // Portal warga hanya untuk role warga; akun pengurus masuk lewat panel admin.
+        if (Auth::user()->role === 'admin') {
+            Auth::logout();
+            RateLimiter::clear($this->throttleKey());
+
+            throw ValidationException::withMessages([
+                'email' => 'Akun pengurus tidak bisa masuk portal warga. Silakan gunakan panel admin.',
+            ]);
+        }
+
         RateLimiter::clear($this->throttleKey());
     }
 

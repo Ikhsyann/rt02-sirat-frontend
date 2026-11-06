@@ -4,7 +4,7 @@ Sistem Informasi Rumah Tangga (SIRAT) — RT 02.
 Repository ini berfungsi sebagai **Frontend (Portal Warga & Beranda Publik)** yang membaca data dari database bersama `rt02-db`.
 
 ## Spesifikasi & Tech Stack
-- **Framework**: Laravel 12
+- **Framework**: Laravel 13
 - **Auth Warga**: Laravel Breeze (`/login`)
 - **UI & Templating**: Blade + Tailwind CSS + Vite
 - **Database**: MySQL 8.0 (`rt02-db` di DBngin) — *Shared Database dengan Backend*
