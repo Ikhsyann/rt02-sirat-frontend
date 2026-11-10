@@ -5,9 +5,8 @@
     {{-- === HERO MINI === --}}
     <section class="relative rounded-[28px] overflow-hidden min-h-[340px] flex flex-col justify-between p-8 md:p-10 shadow-xl text-surface-white"
              style="background: linear-gradient(160deg, #1F5130 0%, #0F2E1A 70%);">
-        {{-- shortcut: foto lingkungan masih placeholder Stitch, ganti foto asli RT saat tersedia --}}
-        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay pointer-events-none opacity-75"
-             style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBSN6Mn2sb8UM0DyExtXDcRA5tZnuVkgMplLWy6WrcNEzp3_D9Pzx1fa_1wbRpNGQfA1bGleMmde40wmMPWf-D7QgQLsUqESCjAaDPm1hW18uGF0YiLEN5kqQzBRbjEnYb5dQ96zbsAcCWAGJy-SIzL8RxJ_RsoMCINkUJrgjUwAfA-FLfZjJDiTS-FTI_mO0XlD0U5kdBsBu6hfstPKEZLDSqowQo2ieAqeKjiskuYrEV7wdb7uniochBhJ6YuECVHDelDEUiA-thl&quot;);"></div>
+        {{-- Media hero: diunggah admin di Pengaturan Tampilan (backend). --}}
+        <x-hero-media :media="$heroMedia ?? null" fallback="images/hero-portal.jpg" />
 
         <div class="relative z-10 text-center max-w-2xl mx-auto my-auto py-8">
             <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">

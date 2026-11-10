@@ -2,9 +2,8 @@
     {{-- === HERO === --}}
     <section class="relative rounded-[32px] overflow-hidden min-h-[560px] md:min-h-[640px] flex flex-col justify-between p-8 md:p-14 shadow-2xl text-surface-white"
              style="background: linear-gradient(160deg, #1F5130 0%, #0F2E1A 70%);">
-        {{-- shortcut: foto lingkungan masih placeholder Stitch (hosting Google), ganti foto asli RT saat tersedia --}}
-        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay pointer-events-none opacity-75"
-             style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCTrfKa0ZSptOa9HJ3aSOU6uebgryATZhh3wHPE38DaixaY6_OR3UCJPXDNxrv2jhbm9uAarM--TRE32NQzqYPvD6DAN-rFt0n1vQeTqRXuMb8TSYnAYjhNVNqWTtdTxzI867Mjxgo79_dUUrecA97t_Tx5qIBxa_kNpVL-XjZhxptR3pbEGD2uE1X3HZGzxDjR2o9T_v18x5apWeLQF24t_oPrN5JjXlokCrLRglWBVIwmZan0iFO-xAMTJCYCLj6a5Jz3W_HrqwGv&quot;);"></div>
+        {{-- Media hero: diunggah admin di Pengaturan Tampilan (backend). --}}
+        <x-hero-media :media="$heroMedia ?? null" fallback="images/hero-beranda.jpg" />
 
         <div class="relative z-10 max-w-3xl my-auto py-10 mx-auto text-center">
             <h1 class="text-4xl sm:text-5xl md:text-headline-display font-bold tracking-tight mb-6">
