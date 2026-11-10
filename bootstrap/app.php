@@ -12,7 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // cloudflared tunnel proxies dari 127.0.0.1; tanpa ini Laravel menghasilkan
+        // URL http:// di balik https -> mixed content (asset & Livewire diblokir Chrome).
+        $middleware->trustProxies(at: '127.0.0.1');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

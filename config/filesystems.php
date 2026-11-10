@@ -41,7 +41,8 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            // relatif host: tetap benar di localhost, tunnel https, dan produksi.
+            'url' => '/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
