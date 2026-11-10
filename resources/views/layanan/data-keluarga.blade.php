@@ -59,9 +59,9 @@
         </section>
 
         @if ($kk->foto_kk)
-            {{-- Identitas visual: lampiran foto Kartu Keluarga (Storage disk public) --}}
+            {{-- Identitas visual: foto KK privat, disajikan lewat route ber-otorisasi --}}
             <section class="bg-surface-white rounded-[24px] border border-border-line/60 p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-5">
-                <img src="{{ asset('storage/' . $kk->foto_kk) }}" alt="Foto Kartu Keluarga {{ $kk->nomor_kk }}"
+                <img src="{{ route('layanan.data-keluarga.foto') }}" alt="Foto Kartu Keluarga {{ $kk->nomor_kk }}"
                      class="w-full sm:w-72 rounded-2xl border border-border-line/40 object-cover"/>
                 <div class="flex flex-col justify-center">
                     <span class="text-chip uppercase text-text-secondary font-label-section">Dokumen resmi</span>

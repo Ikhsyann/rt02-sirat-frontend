@@ -48,6 +48,17 @@ return [
             'report' => false,
         ],
 
+        // Foto KK privat: hanya dibaca lewat route ber-otorisasi, tidak pernah
+        // lewat public/storage. Produksi: isi KK_STORAGE_PATH dengan path absolut
+        // folder storage/app/private milik backend (satu folder bersama).
+        'kk' => [
+            'driver' => 'local',
+            'root' => env('KK_STORAGE_PATH') ?: dirname(base_path()).'/rt02-sirat-backend/storage/app/private',
+            'serve' => false,
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

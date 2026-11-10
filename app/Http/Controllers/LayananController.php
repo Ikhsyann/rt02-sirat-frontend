@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Keuangan;
 use App\Models\Kegiatan;
+use App\Models\Keuangan;
 use App\Models\UnitDarurat;
 use App\Support\LikePattern;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class LayananController extends Controller
 {
@@ -101,5 +102,23 @@ class LayananController extends Controller
             ->first();
 
         return view('layanan.data-keluarga', ['anggota' => $anggota]);
+    }
+
+    /**
+     * Foto KK hanya untuk pemiliknya. URL sengaja tanpa ID agar dokumen
+     * keluarga lain tidak bisa ditebak; path diambil dari KK akun sendiri.
+     */
+    public function fotoKartuKeluarga(Request $request)
+    {
+        $foto = $request->user()->anggotaKeluarga()
+            ->with('kartuKeluarga:id,foto_kk')
+            ->first()?->kartuKeluarga?->foto_kk;
+
+        abort_unless($foto && Storage::disk('kk')->exists($foto), 404);
+
+        return Storage::disk('kk')->response($foto, null, [
+            'Cache-Control' => 'private, no-store',
+            'X-Content-Type-Options' => 'nosniff',
+        ]);
     }
 }

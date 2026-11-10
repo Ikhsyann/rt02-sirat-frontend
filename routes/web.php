@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/layanan/keuangan', [LayananController::class, 'keuangan'])->name('layanan.keuangan');
     Route::get('/layanan/nomor-darurat', [LayananController::class, 'nomorDarurat'])->name('layanan.nomor-darurat');
     Route::get('/layanan/data-keluarga', [LayananController::class, 'dataKeluarga'])->name('layanan.data-keluarga');
+    Route::get('/layanan/data-keluarga/foto', [LayananController::class, 'fotoKartuKeluarga'])->name('layanan.data-keluarga.foto');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
