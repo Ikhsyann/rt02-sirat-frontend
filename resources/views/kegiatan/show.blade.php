@@ -28,7 +28,7 @@
                     </span>
                     <span class="inline-flex items-center gap-1.5">
                         <x-material-icon name="groups" class="text-[14px] text-mid"/>
-                        {{ $kegiatan->absensis()->count() }} warga tercatat hadir
+                        {{ $kegiatan->absensis()->where('status_hadir', 'hadir')->count() }} warga tercatat hadir
                     </span>
                 </div>
             </div>
@@ -53,9 +53,9 @@
 
             <!-- Isi deskripsi: paragraf dibangun dari teks deskripsi -->
             <div class="bg-surface-white rounded-[24px] border border-border-line/60 p-6 sm:p-9">
-                @foreach (preg_split('/\r\n|\r|\n/', (string) $kegiatan->deskripsi) as $i => $paragraf)
+                @foreach (preg_split('/\r\n|\r|\n/', (string) $kegiatan->deskripsi) as $paragraf)
                     @if(trim($paragraf) !== '')
-                        <p class="{{ $i === 0 ? 'text-text-main text-body-lg leading-relaxed mb-5' : 'text-text-secondary text-body-md leading-relaxed mb-4' }}">{{ $paragraf }}</p>
+                        <p class="text-text-secondary text-body-md leading-relaxed mb-4">{{ $paragraf }}</p>
                     @endif
                 @endforeach
             </div>
