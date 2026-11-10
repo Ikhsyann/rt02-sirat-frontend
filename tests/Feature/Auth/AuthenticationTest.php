@@ -3,8 +3,8 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
@@ -51,7 +51,9 @@ class AuthenticationTest extends TestCase
             $table->string('role')->default('warga');
         });
 
-        $admin = User::factory()->create(['role' => 'admin']);
+        $admin = User::factory()->create();
+        $admin->role = 'admin';
+        $admin->save();
 
         $response = $this->from('/login')->post('/login', [
             'email' => $admin->email,
