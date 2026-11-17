@@ -29,3 +29,11 @@ npm run dev
 php artisan serve --port=8001
 ```
 Login Warga: `warga@rt02.test` / `password`.
+
+## Deploy
+
+Push ke `main` memicu `.github/workflows/deploy.yml`, yang SSH ke VPS lalu menjalankan `./deploy.sh` di direktori aplikasi.
+
+Secret GitHub yang dibutuhkan: `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY`, `VPS_APP_PATH`.
+
+Backup database dikelola dari repo backend (`scripts/backup-db.sh`).
