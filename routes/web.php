@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'beranda'])->name('beranda');
 Route::get('/kegiatan', [PublicController::class, 'kegiatanIndex'])->name('kegiatan.index');
 Route::get('/kegiatan/{kegiatan:slug}', [PublicController::class, 'kegiatanShow'])->name('kegiatan.show');
+Route::get('/prestasi', [PublicController::class, 'prestasiIndex'])->name('prestasi.index');
 
 // --- Portal Warga ---
 Route::get('/dashboard', [LayananController::class, 'dashboard'])

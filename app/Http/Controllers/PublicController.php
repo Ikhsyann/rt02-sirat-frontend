@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KartuKeluarga;
 use App\Models\Kegiatan;
+use App\Models\Prestasi;
 use App\Support\LikePattern;
 use Illuminate\Http\Request;
 
@@ -42,5 +43,24 @@ class PublicController extends Controller
             ->get();
 
         return view('kegiatan.show', compact('kegiatan', 'terkait'));
+    }
+
+    public function prestasiIndex(Request $request)
+    {
+        // Filter jenis: nilai selain dua pilihan resmi — termasuk parameter
+        // berupa array — jatuh ke "semua", bukan error 500.
+        $jenis = $request->input('jenis');
+        if (! in_array($jenis, ['sertifikat', 'piala'], true)) {
+            $jenis = null;
+        }
+
+        $prestasi = Prestasi::query()
+            ->when($jenis !== null, fn ($query) => $query->where('jenis', $jenis))
+            ->orderByDesc('tanggal')
+            ->orderByDesc('id')
+            ->paginate(9)
+            ->withQueryString();
+
+        return view('prestasi.index', compact('prestasi', 'jenis'));
     }
 }
