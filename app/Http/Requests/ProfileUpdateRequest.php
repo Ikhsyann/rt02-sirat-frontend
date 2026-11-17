@@ -2,10 +2,8 @@
 
 namespace App\Http\Requests;
 
-use App\Models\User;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class ProfileUpdateRequest extends FormRequest
 {
@@ -16,16 +14,11 @@ class ProfileUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
+        // Email sengaja tidak divalidasi: warga tidak boleh mengubah email lewat
+        // profil (pengaman di server, bukan hanya HTML read-only). Jalur resmi
+        // penggantian email adalah pengurus RT di panel admin backend.
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => [
-                'required',
-                'string',
-                'lowercase',
-                'email',
-                'max:255',
-                Rule::unique(User::class)->ignore($this->user()->id),
-            ],
         ];
     }
 }
