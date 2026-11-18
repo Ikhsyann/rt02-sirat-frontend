@@ -27,11 +27,11 @@
 
                 {{-- Menu tengah (desktop) --}}
                 <div class="hidden md:flex items-center gap-1 bg-soft/80 p-1.5 rounded-full border border-border-line/30">
-                    <a class="{{ request()->routeIs('beranda') ? 'text-dark font-semibold bg-lime/40' : 'text-on-surface-variant hover:text-dark' }} px-4 py-2 rounded-full text-body-md whitespace-nowrap transition-all" href="{{ route('beranda') }}">Beranda</a>
-                    <a class="{{ request()->routeIs('kegiatan.*') ? 'text-dark font-semibold bg-lime/40' : 'text-on-surface-variant hover:text-dark' }} px-4 py-2 rounded-full text-body-md whitespace-nowrap transition-all" href="{{ route('kegiatan.index') }}">Berita & Kegiatan</a>
-                    <a class="{{ request()->routeIs('prestasi.*') ? 'text-dark font-semibold bg-lime/40' : 'text-on-surface-variant hover:text-dark' }} px-4 py-2 rounded-full text-body-md whitespace-nowrap transition-all" href="{{ route('prestasi.index') }}">Prestasi</a>
-                    <a class="text-on-surface-variant hover:text-dark px-4 py-2 rounded-full text-body-md whitespace-nowrap transition-all" href="{{ route('beranda') }}#tentang">Tentang</a>
-                    <a class="text-on-surface-variant hover:text-dark px-4 py-2 rounded-full text-body-md whitespace-nowrap transition-all" href="{{ route('beranda') }}#layanan">Layanan</a>
+                    <a data-nav class="nav-pill {{ request()->routeIs('beranda') ? 'is-active' : '' }}" href="{{ route('beranda') }}">Beranda</a>
+                    <a data-nav data-nav-section="kabar-warga" class="nav-pill {{ request()->routeIs('kegiatan.*') ? 'is-active' : '' }}" href="{{ route('kegiatan.index') }}">Berita & Kegiatan</a>
+                    <a data-nav class="nav-pill {{ request()->routeIs('prestasi.*') ? 'is-active' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
+                    <a data-nav data-nav-section="tentang" class="nav-pill" href="{{ route('beranda') }}#tentang">Tentang</a>
+                    <a data-nav data-nav-section="layanan" class="nav-pill" href="{{ route('beranda') }}#layanan">Layanan</a>
                 </div>
 
                 <div class="flex items-center gap-2">
@@ -57,11 +57,11 @@
 
             <!-- Menu mobile -->
             <div data-menu class="hidden md:hidden mx-4 mb-3 p-2 rounded-2xl bg-surface-white border border-border-line/40 shadow-md">
-                <a class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}">Beranda</a>
-                <a class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('kegiatan.index') }}">Berita & Kegiatan</a>
-                <a class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('prestasi.*') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
-                <a class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#tentang">Tentang</a>
-                <a class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#layanan">Layanan</a>
+                <a data-nav class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('beranda') ? 'is-active' : '' }}" href="{{ route('beranda') }}">Beranda</a>
+                <a data-nav data-nav-section="kabar-warga" class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('kegiatan.*') ? 'is-active' : '' }}" href="{{ route('kegiatan.index') }}">Berita & Kegiatan</a>
+                <a data-nav class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('prestasi.*') ? 'is-active' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
+                <a data-nav data-nav-section="tentang" class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#tentang">Tentang</a>
+                <a data-nav data-nav-section="layanan" class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#layanan">Layanan</a>
                 @auth
                     <a class="block px-4 py-2.5 rounded-xl text-body-md font-semibold text-dark bg-soft mt-1" href="{{ route('dashboard') }}">Portal Warga ↗</a>
                 @endauth
