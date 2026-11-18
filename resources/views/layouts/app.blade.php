@@ -58,12 +58,12 @@
             </div>
 
             <div data-menu class="hidden lg:hidden mt-2 p-2 rounded-2xl bg-surface-white border border-border-line/40 shadow-md">
-                <a class="block px-4 py-2.5 rounded-xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('dashboard') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('dashboard') }}">Beranda</a>
-                <a class="block px-4 py-2.5 rounded-xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('layanan.keuangan') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('layanan.keuangan') }}">Laporan Kas & Keuangan</a>
-                <a class="block px-4 py-2.5 rounded-xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('prestasi.*') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
-                <a class="block px-4 py-2.5 rounded-xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('layanan.nomor-darurat') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('layanan.nomor-darurat') }}">Kontak Penting & Darurat</a>
-                <a class="block px-4 py-2.5 rounded-xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('layanan.data-keluarga') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('layanan.data-keluarga') }}">Data Kartu Keluarga</a>
-                <a class="block px-4 py-2.5 rounded-xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('profile.*') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('profile.edit') }}">Profil Saya</a>
+                <a class="block px-4 py-2.5 rounded-2xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('dashboard') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('dashboard') }}">Beranda</a>
+                <a class="block px-4 py-2.5 rounded-2xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('layanan.keuangan') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('layanan.keuangan') }}">Laporan Kas & Keuangan</a>
+                <a class="block px-4 py-2.5 rounded-2xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('prestasi.*') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
+                <a class="block px-4 py-2.5 rounded-2xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('layanan.nomor-darurat') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('layanan.nomor-darurat') }}">Kontak Penting & Darurat</a>
+                <a class="block px-4 py-2.5 rounded-2xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('layanan.data-keluarga') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('layanan.data-keluarga') }}">Data Kartu Keluarga</a>
+                <a class="block px-4 py-2.5 rounded-2xl text-sm text-text-secondary hover:bg-soft hover:text-dark {{ request()->routeIs('profile.*') ? 'bg-soft text-dark font-semibold' : '' }}" href="{{ route('profile.edit') }}">Profil Saya</a>
             </div>
         </header>
 

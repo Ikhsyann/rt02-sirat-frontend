@@ -31,6 +31,13 @@
     }
 }
 
+/* Menu mobile terbuka: header ikut memanjang ke bawah, jadi bukan pil raksasa */
+@media (max-width: 767px) {
+    header:has([data-menu]:not(.hidden)) {
+        border-radius: 28px;
+    }
+}
+
 /* Tanpa JS: tautan bagian menyala lewat :target, sorotan rute dipadamkan dulu */
 html:not(.js) body:has(:is(#kabar-warga, #tentang, #layanan):target) [data-nav].is-active:not([data-nav-section]) {
     @apply bg-transparent font-normal text-on-surface-variant;

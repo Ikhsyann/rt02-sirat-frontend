@@ -58,13 +58,13 @@
 
             <!-- Menu mobile -->
             <div data-menu class="hidden md:hidden mx-4 mb-3 p-2 rounded-2xl bg-surface-white border border-border-line/40 shadow-md">
-                <a data-nav class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('beranda') ? 'is-active' : '' }}" href="{{ route('beranda') }}">Beranda</a>
-                <a data-nav data-nav-section="kabar-warga" class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('kegiatan.*') ? 'is-active' : '' }}" href="{{ route('kegiatan.index') }}">Berita & Kegiatan</a>
-                <a data-nav class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('prestasi.*') ? 'is-active' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
-                <a data-nav data-nav-section="tentang" class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#tentang">Tentang</a>
-                <a data-nav data-nav-section="layanan" class="block px-4 py-2.5 rounded-xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#layanan">Layanan</a>
+                <a data-nav class="block px-4 py-2.5 rounded-2xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('beranda') ? 'is-active' : '' }}" href="{{ route('beranda') }}">Beranda</a>
+                <a data-nav data-nav-section="kabar-warga" class="block px-4 py-2.5 rounded-2xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('kegiatan.*') ? 'is-active' : '' }}" href="{{ route('kegiatan.index') }}">Berita & Kegiatan</a>
+                <a data-nav class="block px-4 py-2.5 rounded-2xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark {{ request()->routeIs('prestasi.*') ? 'is-active' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
+                <a data-nav data-nav-section="tentang" class="block px-4 py-2.5 rounded-2xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#tentang">Tentang</a>
+                <a data-nav data-nav-section="layanan" class="block px-4 py-2.5 rounded-2xl text-body-md text-on-surface-variant hover:bg-soft hover:text-dark" href="{{ route('beranda') }}#layanan">Layanan</a>
                 @auth
-                    <a class="block px-4 py-2.5 rounded-xl text-body-md font-semibold text-dark bg-soft mt-1" href="{{ route('dashboard') }}">Portal Warga ↗</a>
+                    <a class="block px-4 py-2.5 rounded-2xl text-body-md font-semibold text-dark bg-soft mt-1" href="{{ route('dashboard') }}">Portal Warga ↗</a>
                 @endauth
             </div>
         </header>
