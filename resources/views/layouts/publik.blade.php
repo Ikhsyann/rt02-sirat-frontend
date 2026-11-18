@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>document.documentElement.classList.add('js');</script>
 
         <title>{{ $title ?? 'SIRAT RT 02 Graha Indah' }}</title>
 

@@ -30,3 +30,14 @@
         @apply bg-soft font-semibold text-dark;
     }
 }
+
+/* Tanpa JS: tautan bagian menyala lewat :target, sorotan rute dipadamkan dulu */
+html:not(.js) body:has(:is(#kabar-warga, #tentang, #layanan):target) [data-nav].is-active:not([data-nav-section]) {
+    @apply bg-transparent font-normal text-on-surface-variant;
+}
+
+html:not(.js) body:has(#kabar-warga:target) [data-nav][data-nav-section='kabar-warga'],
+html:not(.js) body:has(#tentang:target) [data-nav][data-nav-section='tentang'],
+html:not(.js) body:has(#layanan:target) [data-nav][data-nav-section='layanan'] {
+    @apply bg-lime/40 font-semibold text-dark;
+}
