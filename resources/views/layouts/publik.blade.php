@@ -20,9 +20,10 @@
             <nav class="flex justify-between items-center px-4 sm:px-6 py-3 w-full gap-3">
                 <a class="flex items-center gap-3 group" href="{{ route('beranda') }}">
                     <img src="{{ asset('images/lambang-balikpapan.svg') }}" alt="Lambang Kota Balikpapan" class="h-10 w-10 object-contain transition-transform group-hover:scale-105 duration-200">
-                    <div class="hidden sm:flex flex-col text-left">
-                        <span class="text-headline-sm font-bold text-dark leading-tight">SIRAT</span>
-                        <span class="text-chip text-on-surface-variant font-medium tracking-wide">RT 02 Graha Indah</span>
+                    {{-- Teks brand baru muat setelah 1024px; di bawah itu pil menu butuh ruang --}}
+                    <div class="hidden lg:flex flex-col text-left">
+                        <span class="whitespace-nowrap text-headline-sm font-bold text-dark leading-tight">SIRAT</span>
+                        <span class="whitespace-nowrap text-chip text-on-surface-variant font-medium tracking-wide">RT 02 Graha Indah</span>
                     </div>
                 </a>
 
