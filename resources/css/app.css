@@ -31,6 +31,13 @@
     }
 }
 
+/* Tautan bagian (Tentang, Layanan) bergeser halus, bukan melompat */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 /* Menu mobile terbuka: header ikut memanjang ke bawah, jadi bukan pil raksasa */
 @media (max-width: 767px) {
     header:has([data-menu]:not(.hidden)) {
